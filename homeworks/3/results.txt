@@ -1,0 +1,14 @@
+Optimal Spanning Tree:
+
+(B - J)
+(C - I)
+(E - A)
+(A - F)
+(F - D)
+(G - D)
+(D - I)
+(I - H)
+(H - J)
+
+Minimal cost: 698
+Computation time: 12431.6ms

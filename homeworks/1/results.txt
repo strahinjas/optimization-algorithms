@@ -1,0 +1,11 @@
+Maximum number of calls: 255551481441
+Prices: 1.20 1.25 1.50 3.16       
+Computation time: 53.02732s       
+
+Maximum number of calls: 359425431
+Prices: 1.20 1.25 1.50 3.16
+Computation time: 0.15085s
+
+Maximum number of calls: 216000
+Prices: 1.20 1.25 1.50 3.16
+Computation time: 0.00031s
