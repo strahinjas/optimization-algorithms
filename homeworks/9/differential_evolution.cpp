@@ -10,7 +10,7 @@
 
 constexpr std::uint64_t WEIGHT_COUNT = 10;
 
-constexpr std::uint64_t POPULATION_SIZE  = 100;
+constexpr std::uint64_t POPULATION_SIZE  = 10 * WEIGHT_COUNT;
 constexpr std::uint64_t GENERATION_COUNT = 50;
 
 constexpr double F  = 0.8;

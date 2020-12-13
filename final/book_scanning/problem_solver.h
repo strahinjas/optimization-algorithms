@@ -59,7 +59,7 @@ private:
 	// selection
 	Population rank(Population& population);
 	Population rouletteWheel(const Population& population, const std::vector<std::uint64_t>& scores, std::uint64_t totalScore);
-	Population tournament(Population& population, const std::vector<std::uint64_t>& scores);
+	Population tournament(const Population& population, const std::vector<std::uint64_t>& scores);
 
 	// partially-mapped crossover
 	Parents pmx(const Parents& parents);

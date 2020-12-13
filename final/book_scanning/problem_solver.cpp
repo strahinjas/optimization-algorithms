@@ -141,7 +141,7 @@ void ProblemSolver::writeSolution(const std::string& fileName) const
 		os << std::left << std::setw(width) << "Crossover rate"        << crossoverRate  << '\n';
 		os << std::left << std::setw(width) << "Mutation rate"         << mutationRate   << '\n';
 		os << std::left << std::setw(width) << "Elite pick percentage" << static_cast<std::uint16_t>(elitePercent * 100.0) << "%\n";
-		os << std::left << std::setw(width) << "Selection method used" << selection << '\n';
+		os << std::left << std::setw(width) << "Selection method"      << selection << '\n';
 
 		os << "###################################################################\n";
 		os << "########################  Problem data set  #######################\n";
@@ -345,7 +345,7 @@ Population ProblemSolver::rouletteWheel(const Population& population, const std:
 	return next;
 }
 
-Population ProblemSolver::tournament(Population& population, const std::vector<std::uint64_t>& scores)
+Population ProblemSolver::tournament(const Population& population, const std::vector<std::uint64_t>& scores)
 {
 	Population next;
 	next.reserve(populationSize);
