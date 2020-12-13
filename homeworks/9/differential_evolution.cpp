@@ -52,7 +52,7 @@ double targetFunction(double x)
 	return 0.5 * std::sin(PI * x);
 }
 
-double output(double x, weights weights)
+double output(double x, const weights& weights)
 {
 	double sum = 0.0;
 
@@ -64,7 +64,7 @@ double output(double x, weights weights)
 	return std::tanh(sum);
 }
 
-double costFunction(weights weights)
+double costFunction(const weights& weights)
 {
 	double cost = 0.0;
 
