@@ -53,7 +53,7 @@ inline std::int64_t getRandomInt(std::int64_t max)
 
 inline double getRandomDouble()
 {
-	std::uniform_real_distribution<> distribution;
+	std::uniform_real_distribution distribution;
 	return distribution(engine);
 }
 

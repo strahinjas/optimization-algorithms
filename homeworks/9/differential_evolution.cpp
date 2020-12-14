@@ -9,9 +9,7 @@
 #include <unordered_set>
 
 constexpr std::uint64_t WEIGHT_COUNT = 10;
-
-constexpr std::uint64_t POPULATION_SIZE  = 10 * WEIGHT_COUNT;
-constexpr std::uint64_t GENERATION_COUNT = 50;
+constexpr std::uint64_t POPULATION_SIZE = 5 * WEIGHT_COUNT;
 
 constexpr double F  = 0.8;
 constexpr double CR = 0.9;
@@ -90,6 +88,7 @@ int main(int argc, const char* argv[])
 
 	weights solution;
 	double minimalCost = std::numeric_limits<double>::max();
+	std::uint64_t generation = 0;
 
 	while (true)
 	{
@@ -107,6 +106,8 @@ int main(int argc, const char* argv[])
 
 			costs[i] = cost;
 		}
+
+		std::cout << ++generation << ' ' << minimalCost << '\n';
 
 		if (minimalCost < STOP_COST) break;
 
@@ -149,19 +150,17 @@ int main(int argc, const char* argv[])
 		}
 	}
 
-	constexpr std::uint8_t WIDTH = 6;
 	constexpr std::uint8_t PRECISION = 15;
 
-	std::cout << "Weights:\n";
+	std::cout << "\nWeights:\n\n";
 	std::cout << std::fixed << std::setprecision(PRECISION);
 
 	for (std::size_t i = 0; i < WEIGHT_COUNT; i++)
 	{
-		std::cout << std::left << std::setw(WIDTH) << "w[" << i + 1 << ']';
-		std::cout << "= " << solution[i] << '\n';
+		std::cout << "w[" << i + 1 << "] = " << solution[i] << '\n';
 	}
 
-	std::cout << "Minimal cost: " << minimalCost << '\n';
+	std::cout << "\nMinimal cost: " << minimalCost << '\n';
 
 	return 0;
 }
