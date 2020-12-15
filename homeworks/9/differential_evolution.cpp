@@ -2,6 +2,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstdint>
+#include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <limits>
@@ -131,7 +132,10 @@ int main(int argc, const char* argv[])
 
 			for (std::size_t j = 0; j < WEIGHT_COUNT; j++)
 			{
-				const double z = x[A][j] + F * (x[B][j] - x[C][j]);
+				double z = x[A][j] + F * (x[B][j] - x[C][j]);
+				
+				if (z < MIN_WEIGHT) z = MIN_WEIGHT;
+				else if (z > MAX_WEIGHT) z = MAX_WEIGHT;
 
 				if (randomDouble(0.0, 1.0) < CR || j == R)
 				{
@@ -149,6 +153,18 @@ int main(int argc, const char* argv[])
 			if (costFunction(candidates[i]) < costs[i]) population[i] = candidates[i];
 		}
 	}
+
+	std::ofstream targetFile("target.txt", std::ofstream::trunc);
+	std::ofstream outputFile("output.txt", std::ofstream::trunc);
+
+	for (double x = -1.0; x <= 1.0; x += 0.1)
+	{
+		targetFile << x << ' ' << targetFunction(x)   << '\n';
+		outputFile << x << ' ' << output(x, solution) << '\n';
+	}
+
+	targetFile.close();
+	outputFile.close();
 
 	constexpr std::uint8_t PRECISION = 15;
 
