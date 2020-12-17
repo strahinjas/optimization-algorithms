@@ -154,16 +154,13 @@ int main(int argc, const char* argv[])
 		}
 	}
 
-	std::ofstream targetFile("target.txt", std::ofstream::trunc);
 	std::ofstream outputFile("output.txt", std::ofstream::trunc);
 
 	for (double x = -1.0; x <= 1.0; x += 0.1)
 	{
-		targetFile << x << ' ' << targetFunction(x)   << '\n';
-		outputFile << x << ' ' << output(x, solution) << '\n';
+		outputFile << x << ' ' << targetFunction(x) << ' ' << output(x, solution) << '\n';
 	}
 
-	targetFile.close();
 	outputFile.close();
 
 	constexpr std::uint8_t PRECISION = 15;
