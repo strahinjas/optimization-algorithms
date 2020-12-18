@@ -3,8 +3,8 @@
 ###################################################################
 ######################  Algorithm parameters  #####################
 ###################################################################
-Population size               10000
-Number of generations         50
+Population size               20000
+Number of generations         100
 Crossover rate                0.80
 Mutation rate                 0.10
 Elite pick percentage         10%
@@ -12,12 +12,12 @@ Selection method              Tournament
 ###################################################################
 ########################  Problem data set  #######################
 ###################################################################
-Number of books               6
-Number of libraries           2
-Number of days                7
+Number of books               100000
+Number of libraries           100
+Number of days                200
 ###################################################################
 #########################  Final results  #########################
 ###################################################################
-Best score                    21
-Execution time                0.39 seconds
+Best score                    1455069
+Execution time                271.87 seconds
 ###################################################################
