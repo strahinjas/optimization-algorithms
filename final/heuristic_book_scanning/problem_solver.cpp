@@ -48,12 +48,12 @@ void ProblemSolver::readData(const std::string& fileName)
 		{
 			std::uint32_t bookID; file >> bookID;
 			library.books.push_back(bookID);
-
-			std::sort(library.books.begin(), library.books.end(), [this](const std::uint32_t& a, const std::uint32_t& b)
-			{
-				return books[a] > books[b];
-			});
 		}
+
+		std::sort(library.books.begin(), library.books.end(), [this](const std::uint32_t& a, const std::uint32_t& b)
+		{
+			return books[a] > books[b];
+		});
 
 		libraries.push_back(library);
 	}
@@ -174,13 +174,11 @@ void ProblemSolver::writeSolution(const std::string& fileName) const
 	file.close();
 }
 
-std::uint64_t ProblemSolver::calculateScore(const Individual& individual) const
+std::uint64_t ProblemSolver::calculateScore(const Individual& libraryIDs) const
 {
 	std::uint64_t score = 0;
 	std::unordered_set<std::uint32_t> scannedBooks;
 	std::unordered_set<std::uint32_t> signedLibraries;
-
-	const std::vector<std::uint32_t>& libraryIDs = individual;
 
 	std::vector<std::uint32_t> currentBook(L, 0);
 
@@ -217,7 +215,7 @@ std::uint64_t ProblemSolver::calculateScore(const Individual& individual) const
 
 		if (signedLibraries.empty())
 		{
-			if (signupDay == D) break;
+			if (signupDay >= D) break;
 			else day = signupDay;
 		}
 

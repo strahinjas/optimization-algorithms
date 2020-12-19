@@ -28,8 +28,8 @@ def plotFromFile(fileName, xLabel, yLabel, plotCount):
 
     plt.xlabel(xLabel)
     plt.ylabel(yLabel)
-	plt.grid()
+    plt.grid()
     plt.show()
 
 
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Zadaci\\homeworks\\9\\output.txt', 'x', 'y', 2)
+plotFromFile('output.txt', 'x', 'y', 2)

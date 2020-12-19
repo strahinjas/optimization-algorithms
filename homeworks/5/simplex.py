@@ -23,6 +23,6 @@ def plotFromFile(fileName, xLabel, yLabel):
     plt.show()
 
 
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Domaći\\5\\vbe.txt', 'E', 'Vbe')
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Domaći\\5\\ic.txt', 'E', 'Ic')
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Domaći\\5\\vout.txt', 'E', 'Vout')
+plotFromFile('vbe.txt', 'E', 'Vbe')
+plotFromFile('ic.txt', 'E', 'Ic')
+plotFromFile('vout.txt', 'E', 'Vout')

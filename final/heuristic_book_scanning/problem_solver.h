@@ -49,7 +49,7 @@ public:
 
 	void writeSolution(const std::string& fileName) const;
 private:
-	std::uint64_t calculateScore(const Individual& individual) const;
+	std::uint64_t calculateScore(const Individual& libraryIDs) const;
 
 	std::vector<Individual> generateInitialPopulation();
 

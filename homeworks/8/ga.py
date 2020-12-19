@@ -33,7 +33,5 @@ def plotFromFile(fileName, xLabel, yLabel, plotCount):
     plt.show()
 
 
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Domaći\\8\\cumulative_minimum.txt',
-             'Iteration', 'Cumulative minimum of cost-function', 20)
-plotFromFile('C:\\Users\\User\\Desktop\\Strahinja\\OOA\\Domaći\\8\\average_cumulative_minimum.txt',
-             'Iteration', 'AVERAGE Cumulative minimum of cost-function', 1)
+plotFromFile('cumulative_minimum.txt', 'Iteration', 'Cumulative minimum of cost-function', 20)
+plotFromFile('average_cumulative_minimum.txt', 'Iteration', 'AVERAGE Cumulative minimum of cost-function', 1)
